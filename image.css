@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+body {
+  background: #11120d;
+  color: #f9fafb;
+  min-height: 100vh;
+}
+.container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 16px 40px;
+  text-align: center;
+}
+h1 {
+  text-align: center;
+  font-size: 35px;
+  font-weight: bolder;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin: 80px auto 30px;
+  color: #caa878;
+}
+#search-form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+#search-input {
+  width: 70%;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid #4b5563;
+  outline: none;
+  background: #fffbf4;
+  color: #000000;
+}
+#search-input:focus {
+  border-color: #caa878;
+}
+button {
+  padding: 10px 20px;
+  border-radius: 999px;
+  /* border-bottom-left-radius: 0;
+  border-top-left-radius: 0; */
+  border: none;
+  cursor: pointer;
+  background:#caa878 ;
+  color: rgb(0, 0, 0);
+  font-weight: 600;
+  
+}
+button:hover {
+  background: #ffe8d3;
+}
+
+.image-grid {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 15px;
+}
+.image-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #020617;
+}
+.image-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+.image-card:hover img {
+  transform: scale(1.08);
+}
+
+.image-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 8px 10px;
+  font-size: 12px;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  text-align: left;
+}
+.load-btn {
+  margin-top: 25px;
+}
+.search-img{
+  padding-right:0px;
+}
