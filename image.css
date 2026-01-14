@@ -181,7 +181,11 @@ button:hover {
 
 
 .load-btn{
-  border-radius: 999px;
+  width: 50%;
+  border-radius: 15px;
+  padding: 0px;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 
