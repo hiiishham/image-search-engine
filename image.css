@@ -11,64 +11,75 @@ body {
 }
 .container {
   max-width: 1000px;
-  margin: 40px auto;
-  padding: 0 16px 40px;
+  margin: 0 auto;
+  padding: 24px 16px 40px;
   text-align: center;
 }
 h1 {
-  text-align: center;
   font-size: 35px;
   font-weight: bolder;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  margin: 80px auto 30px;
+  margin: 60px auto 30px;
   color: #caa878;
 }
 #search-form {
   display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 25px;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto 30px;
 }
+
+
 #search-input {
-  width: 70%;
-  padding: 10px 14px;
-  border-radius: 999px;
-  border: 1px solid #4b5563;
+ flex: 1;
+  padding: 16px 22px;
+  font-size: 16px;
+  border-radius: 999px 0 0 999px; /* left rounded */
+  border: none;
   outline: none;
-  background: #fffbf4;
-  color: #000000;
+  background: #eaf2ff;
+  color: #000;
 }
+
 #search-input:focus {
   border-color: #caa878;
 }
+
 button {
-  padding: 10px 20px;
-  border-radius: 999px;
-  /* border-bottom-left-radius: 0;
-  border-top-left-radius: 0; */
+  padding: 16px 26px;
+  font-size: 16px;
+  border-radius: 0 999px 999px 0;
   border: none;
-  cursor: pointer;
-  background:#caa878 ;
-  color: rgb(0, 0, 0);
+  background: #ceaa78;
+  color: #000;
   font-weight: 600;
-  
-}
-button:hover {
-  background: #ffe8d3;
+  cursor: pointer;
+  margin-left: -1px;
 }
 
+button:hover {
+    background: #ffe9bed4;
+
+}
 .image-grid {
   margin-top: 20px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 15px;
+  gap: 16px;
 }
+
 .image-card {
   position: relative;
   overflow: hidden;
   border-radius: 16px;
   background: #020617;
+  transition: box-shadow 0.3s ease;
 }
+
+.image-card:hover {
+  box-shadow: 0 12px 30px rgba(202, 168, 120, 0.25);
+}
+
 .image-card img {
   width: 100%;
   height: 220px;
@@ -76,6 +87,7 @@ button:hover {
   display: block;
   transition: transform 0.3s ease;
 }
+
 .image-card:hover img {
   transform: scale(1.08);
 }
@@ -85,14 +97,119 @@ button:hover {
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 8px 10px;
-  font-size: 12px;
-  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  padding: 10px 12px;
+  font-size: 13px;
+  background: linear-gradient(to top, rgba(0,0,0,0.75), transparent);
   text-align: left;
 }
 .load-btn {
-  margin-top: 25px;
+  margin-top: 30px;
+  width: 15%;
+  height: 40px;
+  padding: 0;
 }
-.search-img{
-  padding-right:0px;
+
+/* responsive - mobile */
+@media (max-width: 600px) {
+
+  .container {
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px 14px 40px;
+  }
+
+  h1 {
+    font-size: 26px;
+    margin: 20px 0 22px;
+  }
+  #search-form {
+    display: flex;
+    flex-direction: row;    
+    align-items: stretch;
+    gap: 0px;
+  }
+
+  #search-input {
+    flex: 1;
+    padding: 14px 18px;
+    font-size: 15px;
+    border-radius: 999px 0 0 999px; 
+    border-right: none; 
+    border: none;
+    outline: none;           
+  }
+  
+  button {
+    height: 50px;
+    /* width: 25%; */
+    padding: 14px 20px;
+    font-size: 15px;
+    border-radius:0 999px 999px 0;
+    border: none;
+    margin-left: -1px;
+    white-space: nowrap; 
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    
+  }
+
+  .image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* ✅ 2 images per row */
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  .image-card {
+    width: 100%;
+    border-radius: 18px;
+    overflow: hidden;
+  }
+
+  .image-card img {
+    width: 100%;
+    height: 200px; /* ✅ big but balanced */
+    object-fit: cover;
+    border-radius: 18px;
+  }
+
+  .image-info {
+    font-size: 12px;
+    padding: 8px 10px;
+  }
+}
+
+
+.load-btn{
+  border-radius: 999px;
+}
+
+
+
+/* =====================
+   TABLET (≤ 768px)
+===================== */
+@media (max-width: 768px) {
+
+  h1 {
+    font-size: 30px;
+    margin-top: 40px;
+  }
+
+  #search-input {
+    width: 65%;
+  }
+
+  .image-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =====================
+   SMALL LAPTOP (≤ 1024px)
+===================== */
+@media (max-width: 1024px) {
+  .image-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
 }
