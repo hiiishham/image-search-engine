@@ -181,7 +181,7 @@ button:hover {
 
 
 .load-btn{
-  width: 50%;
+  width: 28%;
   border-radius: 15px;
   padding: 0px;
   font-size: 18px;
@@ -189,10 +189,6 @@ button:hover {
 }
 
 
-
-/* =====================
-   TABLET (≤ 768px)
-===================== */
 @media (max-width: 768px) {
 
   h1 {
